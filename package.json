@@ -1,0 +1,51 @@
+{
+    "name": "3d_mriya_new",
+    "version": "1.0.0",
+    "description": "site for 3d miniatures collectors",
+    "author": "enebra",
+    "private": true,
+    "scripts": {
+        "dev": "nuxt",
+        "build": "nuxt build",
+        "start": "nuxt start",
+        "generate": "nuxt generate",
+        "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+        "precommit": "yarn lint",
+        "autofix": "yarn lint --fix"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.11.2",
+        "@fortawesome/fontawesome-svg-core": "^1.2.25",
+        "@fortawesome/free-brands-svg-icons": "^5.11.2",
+        "@fortawesome/free-regular-svg-icons": "^5.11.2",
+        "@fortawesome/free-solid-svg-icons": "^5.11.2",
+        "@fortawesome/vue-fontawesome": "^0.1.7",
+        "@nuxtjs/auth": "^4.8.4",
+        "@nuxtjs/axios": "^5.3.6",
+        "cross-env": "^6.0.0",
+        "node-fetch": "^2.6.0",
+        "nuxt": "^2.0.0",
+        "nuxt-fontawesome": "^0.4.0",
+        "nuxt-i18n": "^6.2.1",
+        "nuxt-validate": "^1.0.1",
+        "vue-awesome-swiper": "^3.1.3",
+        "vue-flag-icon": "^1.0.6",
+        "vue-gallery": "^2.0.0",
+        "vue-scrollto": "^2.17.1",
+        "vuetify": "^2.0.19",
+        "vuetify-loader": "^1.3.0"
+    },
+    "devDependencies": {
+        "@nuxtjs/eslint-config": "^1.0.1",
+        "@nuxtjs/eslint-module": "^1.0.0",
+        "@nuxtjs/vuetify": "^1.0.0",
+        "babel-eslint": "^10.0.1",
+        "eslint": "^6.1.0",
+        "eslint-config-prettier": "^4.1.0",
+        "eslint-plugin-nuxt": ">=0.4.2",
+        "eslint-plugin-prettier": "^3.0.1",
+        "prettier": "^1.16.4",
+        "stylus": "^0.54.7",
+        "stylus-loader": "^3.0.2"
+    }
+}

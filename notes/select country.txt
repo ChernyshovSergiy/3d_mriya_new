@@ -1,0 +1,79 @@
+<v-select
+    v-model="
+        form.selectCountry
+    "
+    :hint="
+        `${
+            form
+                .selectCountry
+                .country_name
+        }, ${
+            form
+                .selectCountry
+                .country_alpha2_code
+        }`
+    "
+    prepend-icon="language"
+    :items="countries"
+    item-text="country_name"
+    item-value="country_alpha2_code"
+    :rules="
+        selectCountryRules
+    "
+    :label="
+        `${$t('country')}`
+    "
+    required
+    persistent-hint
+    return-object
+    single-line
+></v-select>
+<v-layout
+    row
+    wrap
+    align-space-around
+    fill-height
+>
+    <v-flex xs12 sm5>
+        <v-text-field
+            v-model.trim="
+                form.state
+            "
+            :disabled="
+                checkZipCodeSelect
+            "
+            prepend-icon="location_on"
+            name="state"
+            :label="
+                `${$t('state')}`
+            "
+            type="state"
+        >
+        </v-text-field>
+    </v-flex>
+    <v-spacer />
+    <v-flex xs12 sm5>
+        <v-text-field
+            v-model.trim="form.city"
+            :disabled="
+                checkZipCodeSelect
+            "
+            prepend-icon="location_city"
+            name="city"
+            :label="`${$t('city')}`"
+            type="city"
+            :rules="cityRules"
+            data-cy="printingCityField"
+            required
+        >
+        </v-text-field>
+    </v-flex>
+</v-layout>
+
+selectCity: {
+        latitude: this.cities[0].latitude ? this.cities[0].latitude : '',
+        longitude: this.cities[0].longitude ? this.cities[0].longitude : '',
+        place_name: this.cities[0]['place name'] ? this.cities[0]['place name'] : '',
+        state: this.cities[0].state ? this.cities[0].state : '',
+        state_abbreviation: this.cities[0]['state abbreviation'] ? this.cities[0]['state abbreviation'] : ''
+    },
