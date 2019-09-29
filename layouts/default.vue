@@ -26,6 +26,7 @@ export default {
     },
     data() {
         return {
+            mini: false,
             sub: [
                 'financial',
                 'technical',
@@ -74,6 +75,9 @@ export default {
             self.sub.forEach(function(theme) {
                 self.subjects.push(self.$t(theme));
             });
+        },
+        navToggle() {
+            this.mini = !this.mini;
         }
     }
 };

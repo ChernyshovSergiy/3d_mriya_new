@@ -193,7 +193,7 @@
                                                 <v-spacer />
                                                 <v-btn
                                                     :disabled="!valid"
-                                                    outline
+                                                    outlined
                                                     color="orange"
                                                     :loading="loading"
                                                     depressed
@@ -220,7 +220,7 @@
                             done_outline
                         </v-icon>
                         {{ $t('sent_modeling_order') }}
-                        <v-btn dark flat @click="snackbar = false">
+                        <v-btn dark text @click="snackbar = false">
                             {{ $t('close') }}
                         </v-btn>
                     </v-snackbar>
@@ -236,7 +236,7 @@
                             error
                         </v-icon>
                         {{ $t('error_sent_modeling_order') }}
-                        <v-btn dark flat @click="snackbarError = false">
+                        <v-btn dark text @click="snackbarError = false">
                             {{ $t('close') }}
                         </v-btn>
                     </v-snackbar>

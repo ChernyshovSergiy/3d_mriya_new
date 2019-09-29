@@ -1,5 +1,5 @@
 <template>
-    <div class="home mt-5">
+    <div class="home mt-0">
         <home-start-screen :massage="massageMain" />
         <home-introduction
             :headline="headline"
@@ -21,15 +21,11 @@
         />
         <printing-fons />
         <painting :title="PaintingTitle" :text="PaintingText" />
-        <!--        <no-ssr>-->
         <swiper-images-carousel2 />
-        <!--        </no-ssr>-->
         <v-layout row>
-            <v-flex
-                xs12
-                class="text-xs-center display-1 font-weight-lite my-5"
-                >{{ $t('down_massage') }}</v-flex
-            >
+            <v-flex xs12 class="text-center display-1 font-weight-lite my-5">
+                {{ $t('down_massage') }}
+            </v-flex>
         </v-layout>
     </div>
 </template>
@@ -82,20 +78,20 @@ export default {
         genKey() {
             return Math.floor(Math.random() * 1000000000);
         },
-        splitText: function() {
+        splitText() {
             return this.texts.split('|');
         },
-        splitCardItems: function() {
+        splitCardItems() {
             return this.cardItems.split('|');
         },
-        splitCardText: function() {
+        splitCardText() {
             return this.cardTexts.split('|');
         },
-        splitModelingText: function() {
+        splitModelingText() {
             return this.ModelingTexts.split('|');
         }
     },
-    created: async function() {
+    async created() {
         try {
             const apiUrl1 = process.env.baseUrl + '/page/contents';
             const apiUrl2 = process.env.baseUrl + '/order/countries';

@@ -1,0 +1,384 @@
+
+{
+  "header": {
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20190929.204453.4078.0.001.json",
+    "dumpEventTime": "2019-09-29T20:44:53Z",
+    "dumpEventTimeStamp": "1569779093623",
+    "processId": 4078,
+    "cwd": "/home/enebra/WebstormProjects/3d_mriya_new",
+    "commandLine": [
+      "/usr/bin/node",
+      "/home/enebra/WebstormProjects/3d_mriya_new/node_modules/.bin/nuxt"
+    ],
+    "nodejsVersion": "v11.15.0",
+    "glibcVersionRuntime": "2.29",
+    "glibcVersionCompiler": "2.12",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "linux",
+    "componentVersions": {
+      "node": "11.15.0",
+      "v8": "7.0.276.38-node.19",
+      "uv": "1.27.0",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "67",
+      "nghttp2": "1.37.0",
+      "napi": "4",
+      "llhttp": "1.1.1",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1b",
+      "cldr": "34.0",
+      "icu": "63.1",
+      "tz": "2018e",
+      "unicode": "11.0"
+    },
+    "release": {
+      "name": "node",
+      "headersUrl": "https://nodejs.org/download/release/v11.15.0/node-v11.15.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v11.15.0/node-v11.15.0.tar.gz"
+    },
+    "osName": "Linux",
+    "osRelease": "5.0.0-29-generic",
+    "osVersion": "#31-Ubuntu SMP Thu Sep 12 13:05:32 UTC 2019",
+    "osMachine": "x86_64",
+    "host": "ubuntu"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x0000000000a702fd",
+      "symbol": "report::TriggerNodeReport(v8::Isolate*, node::Environment*, char const*, char const*, std::string const&, v8::Local<v8::String>) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x000000000095ccb3",
+      "symbol": "node::OnFatalError(char const*, char const*) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000000000b3dbde",
+      "symbol": "v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000000000b3de14",
+      "symbol": "v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000000000f3ce52",
+      "symbol": " [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000000000f3cf58",
+      "symbol": "v8::internal::Heap::CheckIneffectiveMarkCompact(unsigned long, double) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000000000f49678",
+      "symbol": "v8::internal::Heap::PerformGarbageCollection(v8::internal::GarbageCollector, v8::GCCallbackFlags) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000000000f4a18b",
+      "symbol": "v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000000000f4cec1",
+      "symbol": "v8::internal::Heap::AllocateRawWithRetryOrFail(int, v8::internal::AllocationSpace, v8::internal::AllocationAlignment) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000000000f170f4",
+      "symbol": "v8::internal::Factory::NewFillerObject(int, bool, v8::internal::AllocationSpace) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x00000000011cd3fe",
+      "symbol": "v8::internal::Runtime_AllocateInNewSpace(int, v8::internal::Object**, v8::internal::Isolate*) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000033ec754fc5d",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 1494179840,
+    "totalCommittedMemory": 1492382696,
+    "usedMemory": 1441024664,
+    "availableMemory": 34869968,
+    "memoryLimit": 1526909922,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 524288,
+        "committedMemory": 42224,
+        "capacity": 515584,
+        "used": 33520,
+        "available": 482064
+      },
+      "new_space": {
+        "memorySize": 2097152,
+        "committedMemory": 1871856,
+        "capacity": 1031168,
+        "used": 830032,
+        "available": 201136
+      },
+      "old_space": {
+        "memorySize": 1240666112,
+        "committedMemory": 1240312504,
+        "capacity": 1202885936,
+        "used": 1201237280,
+        "available": 1648656
+      },
+      "code_space": {
+        "memorySize": 12582912,
+        "committedMemory": 12184288,
+        "capacity": 11271616,
+        "used": 11271616,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 29896704,
+        "committedMemory": 29559152,
+        "capacity": 21211280,
+        "used": 21211280,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 208412672,
+        "committedMemory": 208412672,
+        "capacity": 238979048,
+        "used": 206440936,
+        "available": 32538112
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 0,
+        "used": 0,
+        "available": 0
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 502.526,
+    "kernelCpuSeconds": 48.4222,
+    "cpuConsumptionPercent": 9.74268,
+    "maxRss": 1710256128,
+    "pageFaults": {
+      "IORequired": 29,
+      "IONotRequired": 2054044
+    },
+    "fsActivity": {
+      "reads": 119384,
+      "writes": 904
+    }
+  },
+  "uvthreadResourceUsage": {
+    "userCpuSeconds": 257.639,
+    "kernelCpuSeconds": 38.4896,
+    "cpuConsumptionPercent": 5.23658,
+    "fsActivity": {
+      "reads": 66280,
+      "writes": 0
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "GJS_DEBUG_TOPICS": "JS ERROR;JS LOG",
+    "npm_package_dependencies__nuxtjs_auth": "^4.8.4",
+    "npm_package_devDependencies__nuxtjs_eslint_module": "^1.0.0",
+    "SNAP_COMMON": "/var/snap/webstorm/common",
+    "SNAP_INSTANCE_KEY": "",
+    "USER": "enebra",
+    "npm_config_version_commit_hooks": "true",
+    "npm_config_user_agent": "yarn/1.19.0 npm/? node/v11.15.0 linux x64",
+    "XDG_SEAT": "seat0",
+    "npm_package_dependencies_vuetify_loader": "^1.3.0",
+    "npm_config_bin_links": "true",
+    "SSH_AGENT_PID": "2260",
+    "XDG_SESSION_TYPE": "x11",
+    "npm_node_execpath": "/usr/bin/node",
+    "npm_package_dependencies_node_fetch": "^2.6.0",
+    "npm_config_init_version": "1.0.0",
+    "SHLVL": "0",
+    "npm_package_dependencies_vue_scrollto": "^2.17.1",
+    "QT4_IM_MODULE": "xim",
+    "OLDPWD": "/snap/webstorm/112/bin",
+    "SNAP_LIBRARY_PATH": "/var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void",
+    "HOME": "/home/enebra",
+    "npm_package_devDependencies_eslint_plugin_nuxt": ">=0.4.2",
+    "SNAP_USER_DATA": "/home/enebra/snap/webstorm/112",
+    "DESKTOP_SESSION": "ubuntu",
+    "npm_package_devDependencies_stylus_loader": "^3.0.2",
+    "npm_package_devDependencies_eslint_config_prettier": "^4.1.0",
+    "npm_package_dependencies_md5": "^2.2.1",
+    "GIO_LAUNCHED_DESKTOP_FILE": "/var/lib/snapd/desktop/applications/webstorm_webstorm.desktop",
+    "MOCHA_COLORS": "1",
+    "npm_package_scripts_precommit": "yarn lint",
+    "npm_config_init_license": "MIT",
+    "GTK_MODULES": "gail:atk-bridge",
+    "GNOME_SHELL_SESSION_MODE": "ubuntu",
+    "YARN_WRAP_OUTPUT": "false",
+    "npm_package_devDependencies__nuxtjs_vuetify": "^1.8.6",
+    "npm_config_version_tag_prefix": "v",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/1000/bus",
+    "SNAP_REVISION": "112",
+    "COLORTERM": "true",
+    "GIO_LAUNCHED_DESKTOP_FILE_PID": "3714",
+    "npm_package_dependencies__fortawesome_free_solid_svg_icons": "^5.11.2",
+    "npm_package_description": "site for 3d miniatures collectors",
+    "npm_package_readmeFilename": "README.md",
+    "npm_package_dependencies_vue_awesome_swiper": "^3.1.3",
+    "npm_package_dependencies_nuxt_fontawesome": "^0.4.0",
+    "npm_package_dependencies_nuxt": "^2.0.0",
+    "IM_CONFIG_PHASE": "2",
+    "npm_package_devDependencies_prettier": "^1.16.4",
+    "npm_package_dependencies_vue_flag_icon": "^1.0.6",
+    "npm_package_dependencies_nuxt_validate": "^1.0.1",
+    "npm_package_scripts_dev": "nuxt",
+    "GTK_IM_MODULE": "ibus",
+    "LOGNAME": "enebra",
+    "FORCE_COLOR": "true",
+    "SNAP_CONTEXT": "XgY3lS78mM4M3yvkPg44YfgX6yGKWGFrSPJvF3csX8TD",
+    "npm_package_private": "true",
+    "SNAP_VERSION": "2019.2.3",
+    "XDG_SESSION_CLASS": "user",
+    "npm_package_scripts_lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "npm_config_registry": "https://registry.yarnpkg.com",
+    "USERNAME": "enebra",
+    "TERM": "xterm-256color",
+    "XDG_SESSION_ID": "2",
+    "npm_package_dependencies_vuetify": "^2.0.19",
+    "GNOME_DESKTOP_SESSION_ID": "this-is-deprecated",
+    "SNAP_INSTANCE_NAME": "webstorm",
+    "DEBUG_COLORS": "true",
+    "npm_package_scripts_start": "nuxt start",
+    "npm_config_ignore_scripts": "",
+    "WINDOWPATH": "2",
+    "PATH": "/tmp/yarn--1569773437675-0.35125985219790445:/home/enebra/WebstormProjects/3d_mriya_new/node_modules/.bin:/home/enebra/.config/yarn/link/node_modules/.bin:/home/enebra/.yarn/bin:/usr/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/lib/node_modules/npm/bin/node-gyp-bin:/usr/bin/node_modules/npm/bin/node-gyp-bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+    "NODE": "/usr/bin/node",
+    "SESSION_MANAGER": "local/ubuntu:@/tmp/.ICE-unix/2173,unix/ubuntu:/tmp/.ICE-unix/2173",
+    "npm_package_dependencies_cross_env": "^6.0.0",
+    "npm_package_name": "3d_mriya_new",
+    "BAMF_DESKTOP_FILE_HINT": "/var/lib/snapd/desktop/applications/webstorm_webstorm.desktop",
+    "npm_config_color": "always",
+    "SNAP_DATA": "/var/snap/webstorm/112",
+    "XDG_MENU_PREFIX": "gnome-",
+    "XDG_RUNTIME_DIR": "/run/user/1000/snap.webstorm",
+    "npm_package_devDependencies_stylus": "^0.54.7",
+    "DISPLAY": ":0",
+    "XDG_CURRENT_DESKTOP": "ubuntu:GNOME",
+    "LANG": "en_US.UTF-8",
+    "npm_package_devDependencies_eslint": "^6.1.0",
+    "npm_package_devDependencies__nuxtjs_eslint_config": "^1.0.1",
+    "npm_package_dependencies__fortawesome_vue_fontawesome": "^0.1.7",
+    "XAUTHORITY": "/run/user/1000/gdm/Xauthority",
+    "XMODIFIERS": "@im=ibus",
+    "XDG_SESSION_DESKTOP": "ubuntu",
+    "npm_lifecycle_script": "nuxt",
+    "SNAP_USER_COMMON": "/home/enebra/snap/webstorm/common",
+    "SNAP_ARCH": "amd64",
+    "SSH_AUTH_SOCK": "/run/user/1000/keyring/ssh",
+    "SNAP_COOKIE": "XgY3lS78mM4M3yvkPg44YfgX6yGKWGFrSPJvF3csX8TD",
+    "npm_config_version_git_message": "v%s",
+    "SHELL": "/bin/bash",
+    "npm_lifecycle_event": "dev",
+    "npm_package_version": "1.0.0",
+    "GDMSESSION": "ubuntu",
+    "SNAP_REEXEC": "",
+    "QT_ACCESSIBILITY": "1",
+    "npm_config_argv": "{\"remain\":[],\"cooked\":[\"run\",\"dev\"],\"original\":[\"run\",\"dev\"]}",
+    "npm_package_dependencies__fortawesome_fontawesome_free": "^5.11.2",
+    "npm_package_scripts_build": "nuxt build",
+    "SNAP_NAME": "webstorm",
+    "npm_package_dependencies__fortawesome_free_brands_svg_icons": "^5.11.2",
+    "npm_config_version_git_tag": "true",
+    "npm_config_version_git_sign": "",
+    "GPG_AGENT_INFO": "/run/user/1000/gnupg/S.gpg-agent:0:1",
+    "GJS_DEBUG_OUTPUT": "stderr",
+    "npm_package_dependencies_vue_gallery": "^2.0.0",
+    "npm_package_scripts_generate": "nuxt generate",
+    "npm_config_strict_ssl": "true",
+    "QT_IM_MODULE": "xim",
+    "XDG_VTNR": "2",
+    "npm_package_devDependencies_eslint_plugin_prettier": "^3.0.1",
+    "npm_package_dependencies__fortawesome_free_regular_svg_icons": "^5.11.2",
+    "PWD": "/home/enebra/WebstormProjects/3d_mriya_new",
+    "npm_execpath": "/usr/share/yarn/bin/yarn.js",
+    "XDG_DATA_DIRS": "/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop",
+    "CLUTTER_IM_MODULE": "xim",
+    "XDG_CONFIG_DIRS": "/etc/xdg/xdg-ubuntu:/etc/xdg",
+    "npm_package_scripts_autofix": "yarn lint --fix",
+    "npm_package_author_name": "enebra",
+    "SNAP": "/snap/webstorm/112",
+    "npm_config_save_prefix": "^",
+    "npm_config_ignore_optional": "",
+    "npm_package_devDependencies_babel_eslint": "^10.0.1",
+    "npm_package_dependencies__nuxtjs_axios": "^5.3.6",
+    "ELECTRON_NO_ATTACH_CONSOLE": "true",
+    "npm_package_dependencies__fortawesome_fontawesome_svg_core": "^1.2.25",
+    "INIT_CWD": "/home/enebra/WebstormProjects/3d_mriya_new",
+    "npm_package_dependencies_nuxt_i18n": "^6.2.1",
+    "NODE_ENV": "development",
+    "_AXIOS_BASE_URL_": "http://127.0.0.1:9090/api/v1",
+    "VUE_ENV": "server"
+  },
+  "userLimits": {
+    "core_file_size_blocks": {
+      "soft": 0,
+      "hard": "unlimited"
+    },
+    "data_seg_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "file_size_blocks": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_locked_memory_bytes": {
+      "soft": 67108864,
+      "hard": 67108864
+    },
+    "max_memory_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "open_files": {
+      "soft": 1048576,
+      "hard": 1048576
+    },
+    "stack_size_bytes": {
+      "soft": 8388608,
+      "hard": "unlimited"
+    },
+    "cpu_time_seconds": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_user_processes": {
+      "soft": 33909,
+      "hard": 33909
+    },
+    "virtual_memory_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    }
+  },
+  "sharedObjects": [
+    "linux-vdso.so.1",
+    "/lib/x86_64-linux-gnu/libdl.so.2",
+    "/lib/x86_64-linux-gnu/librt.so.1",
+    "/lib/x86_64-linux-gnu/libstdc++.so.6",
+    "/lib/x86_64-linux-gnu/libm.so.6",
+    "/lib/x86_64-linux-gnu/libgcc_s.so.1",
+    "/lib/x86_64-linux-gnu/libpthread.so.0",
+    "/lib/x86_64-linux-gnu/libc.so.6",
+    "/lib64/ld-linux-x86-64.so.2",
+    "/lib/x86_64-linux-gnu/libnss_files.so.2",
+    "/home/enebra/WebstormProjects/3d_mriya_new/node_modules/fibers/bin/linux-x64-67-glibc/fibers.node"
+  ]
+}

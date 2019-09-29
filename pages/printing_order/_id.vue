@@ -20,7 +20,7 @@
                             done_outline
                         </v-icon>
                         {{ $t('confirm_order') }}
-                        <v-btn dark flat @click="mClose">
+                        <v-btn dark text @click="mClose">
                             {{ $t('close') }}
                         </v-btn>
                     </v-snackbar>
@@ -40,7 +40,7 @@
                         <a :href="'mailto:' + email">
                             {{ email }}
                         </a>
-                        <v-btn dark flat @click="mClose">
+                        <v-btn dark text @click="mClose">
                             {{ $t('close') }}
                         </v-btn>
                     </v-snackbar>

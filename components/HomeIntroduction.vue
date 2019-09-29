@@ -1,11 +1,11 @@
 <template>
     <v-container id="Introduction">
         <v-layout column>
-            <v-flex class="display-2 text-xs-center my-5">
+            <v-flex class="display-2 text-center my-5">
                 {{ headline }}
             </v-flex>
             <v-flex>
-                <div class="headline text-xs-center mt-0">
+                <div class="headline text-center mt-0">
                     {{ subHeadline }}
                 </div>
                 <p v-for="(item, i) in text" :key="i" class="subheading mt-3">

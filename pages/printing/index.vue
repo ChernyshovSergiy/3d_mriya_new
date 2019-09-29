@@ -1,5 +1,5 @@
 <template>
-    <v-container class="display-1 text-xs-center mt-5">
+    <v-container class="display-1 text-center mt-5">
         <h1 class="mt-5">This is Printing Page</h1>
     </v-container>
 </template>

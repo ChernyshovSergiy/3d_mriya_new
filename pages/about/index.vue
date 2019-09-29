@@ -2,7 +2,7 @@
     <div class="home mt-5">
         <v-container class="mt-3">
             <v-layout column>
-                <v-flex class="display-2 text-xs-center my-5"
+                <v-flex class="display-2 text-center my-5"
                     >This is Page About Our Company</v-flex
                 >
                 <v-flex>

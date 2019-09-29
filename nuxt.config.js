@@ -41,7 +41,7 @@ export default {
      ** Global CSS
      */
     css: [
-        '~/assets/style/app.styl',
+        // '~/assets/style/app.styl',
         '~/assets/style/main.css',
         'swiper/dist/css/swiper.css'
     ],
@@ -200,6 +200,17 @@ export default {
                     // PreserveState from server
                     preserveState: false
                 },
+                onLanguageSwitched: (previous, current) => {
+                    if (process.client) {
+                        const DATE = new Date();
+                        DATE.setTime(DATE.getTime() + 365 * 24 * 3600 * 1000);
+                        document.cookie =
+                            'lang=' +
+                            current +
+                            '; path=/; expires=' +
+                            DATE.toUTCString();
+                    }
+                },
                 parsePages: true,
                 encodePaths: true
             }
@@ -223,7 +234,7 @@ export default {
     vuetify: {
         customVariables: ['~/assets/variables.scss'],
         theme: {
-            dark: true,
+            dark: false,
             themes: {
                 dark: {
                     primary: colors.blue.darken2,
@@ -243,7 +254,7 @@ export default {
     build: {
         // vendor: ['vue-awesome-swiper'],
         transpile: ['vuetify/lib', 'vue-flag-icon'],
-        plugins: [new VuetifyLoaderPlugin()],
+        // plugins: [new VuetifyLoaderPlugin()],
         loaders: {
             stylus: {
                 import: ['~assets/style/variables.styl']

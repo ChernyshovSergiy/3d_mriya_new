@@ -7,62 +7,62 @@
             dark
             disable-resize-watcher
         >
-            <v-toolbar flat>
+            <v-toolbar>
                 <v-list>
-                    <v-list-tile @click="drawer = !drawer">
-                        <v-list-tile-title class="title"
+                    <v-list-item @click="drawer = !drawer">
+                        <v-list-item-title class="title"
                             ><v-icon left>menu</v-icon>
                             MENU
-                        </v-list-tile-title>
-                    </v-list-tile>
+                        </v-list-item-title>
+                    </v-list-item>
                 </v-list>
             </v-toolbar>
             <v-divider></v-divider>
             <v-list>
                 <template v-for="(item, index) in items">
-                    <v-list-tile
+                    <v-list-item
                         v-if="!authenticated"
                         :key="index"
                         active-class="yellow--text"
                         router
                         :to="item.url"
                     >
-                        <v-list-tile-action>
+                        <v-list-item-icon>
                             <v-icon>{{ item.icon }}</v-icon>
-                        </v-list-tile-action>
+                        </v-list-item-icon>
 
-                        <v-list-tile-content>
-                            <v-list-tile-title
+                        <v-list-item-content>
+                            <v-list-item-title
                                 v-text="item.title"
-                            ></v-list-tile-title>
-                        </v-list-tile-content>
-                    </v-list-tile>
+                            ></v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
                     <v-divider :key="`divider-${index}`"></v-divider>
                 </template>
                 <template v-if="authenticated">
-                    <v-list-tile active-class="yellow--text" to="/about">
-                        <v-list-tile-action>
+                    <v-list-item active-class="yellow--text" to="/about">
+                        <v-list-item-icon>
                             <v-icon>face</v-icon>
-                        </v-list-tile-action>
+                        </v-list-item-icon>
 
-                        <v-list-tile-content>
-                            <v-list-tile-title
+                        <v-list-item-content>
+                            <v-list-item-title
                                 v-text="'Profile'"
-                            ></v-list-tile-title>
-                        </v-list-tile-content>
-                    </v-list-tile>
+                            ></v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
                     <v-divider></v-divider>
-                    <v-list-tile active-class="yellow--text" @click="logout">
-                        <v-list-tile-action>
+                    <v-list-item active-class="yellow--text" @click="logout">
+                        <v-list-item-icon>
                             <v-icon>exit_to_app</v-icon>
-                        </v-list-tile-action>
+                        </v-list-item-icon>
 
-                        <v-list-tile-content>
-                            <v-list-tile-title
+                        <v-list-item-content>
+                            <v-list-item-title
                                 v-text="'Logout'"
-                            ></v-list-tile-title>
-                        </v-list-tile-content>
-                    </v-list-tile>
+                            ></v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
                     <v-divider></v-divider>
                 </template>
             </v-list>
@@ -79,18 +79,18 @@
                     <span>{{ appTitle }}</span>
                 </v-toolbar-title>
             </nuxt-link>
-            <v-btn flat class="hidden-sm-and-down" to="/about">Menu</v-btn>
+            <v-btn text class="hidden-sm-and-down" to="/about">Menu</v-btn>
             <v-spacer class="hidden-sm-and-down"></v-spacer>
 
             <div v-if="!authenticated" class="hidden-sm-and-down">
-                <v-btn flat to="/sign-in">SIGN IN</v-btn>
+                <v-btn text to="/sign-in">SIGN IN</v-btn>
                 <v-btn color="blue-grey darken-4" to="/join">JOIN</v-btn>
             </div>
             <div v-else class="hidden-sm-and-down">
-                <div class="text-xs-center">
+                <div class="text-center">
                     <v-menu offset-y>
                         <template v-slot:activator="{ on }">
-                            <v-btn flat v-on="on"
+                            <v-btn text v-on="on"
                                 >{{ user.name }}
                                 <v-icon dark>expand_more</v-icon>
                             </v-btn>
@@ -99,39 +99,39 @@
                             dark
                             class="blue-grey darken-4 white--text pa-0"
                         >
-                            <v-list-tile
+                            <v-list-item
                                 active-class="yellow--text"
                                 to="/about"
                             >
-                                <v-list-tile-action>
+                                <v-list-item-icon>
                                     <v-icon>face</v-icon>
-                                </v-list-tile-action>
+                                </v-list-item-icon>
 
-                                <v-list-tile-content>
-                                    <v-list-tile-title
+                                <v-list-item-content>
+                                    <v-list-item-title
                                         v-text="'Profile'"
-                                    ></v-list-tile-title>
-                                </v-list-tile-content>
-                            </v-list-tile>
-                            <v-list-tile
+                                    ></v-list-item-title>
+                                </v-list-item-content>
+                            </v-list-item>
+                            <v-list-item
                                 active-class="yellow--text"
                                 @click="logout"
                             >
-                                <v-list-tile-action>
+                                <v-list-item-icon>
                                     <v-icon>exit_to_app</v-icon>
-                                </v-list-tile-action>
+                                </v-list-item-icon>
 
-                                <v-list-tile-content>
-                                    <v-list-tile-title
+                                <v-list-item-content>
+                                    <v-list-item-title
                                         v-text="'Logout'"
-                                    ></v-list-tile-title>
-                                </v-list-tile-content>
-                            </v-list-tile>
+                                    ></v-list-item-title>
+                                </v-list-item-content>
+                            </v-list-item>
                         </v-list>
                     </v-menu>
                 </div>
             </div>
-            <div class="text-xs-center">
+            <div class="text-center">
                 <v-menu offset-y>
                     <template v-slot:activator="{ on }">
                         <v-btn
@@ -141,7 +141,7 @@
                             class="pa-0"
                             depressed
                             large
-                            flat
+                            text
                             v-on="on"
                         >
                             <v-flex
@@ -165,24 +165,24 @@
                         dark
                         class="blue-grey darken-4 white--text pa-0"
                     >
-                        <v-list-tile
+                        <v-list-item
                             v-show="item.language !== locale"
                             @click="changeLanguage(item.language)"
                         >
-                            <v-list-tile-action>
+                            <v-list-item-icon>
                                 <flag
                                     :iso="item.flagCountry"
                                     :squared="false"
                                     :title="item.title"
                                 />
-                            </v-list-tile-action>
+                            </v-list-item-icon>
 
-                            <v-list-tile-content>
-                                <v-list-tile-title
+                            <v-list-item-content>
+                                <v-list-item-title
                                     v-text="item.title"
-                                ></v-list-tile-title>
-                            </v-list-tile-content>
-                        </v-list-tile>
+                                ></v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
                     </v-list>
                 </v-menu>
             </div>
@@ -237,11 +237,11 @@ export default {
         locale() {
             return this.$store.state.lang.locale;
         },
-        filteredLanguage: function() {
+        filteredLanguage() {
             const lang = this.$store.state.lang.locale;
             return this.languages.filter(function(elem) {
                 if (lang === '') return true;
-                else return elem.language.indexOf(lang) > -1;
+                else return elem.language.includes(lang);
             });
         }
     },

@@ -1,7 +1,7 @@
 <template>
     <v-container fluid grid-list-lg>
         <v-layout row justify-center>
-            <v-flex xs12 class="text-xs-center display-1 font-weight-lite my-5">
+            <v-flex xs12 class="text-center display-1 font-weight-lite my-5">
                 {{ title }}
             </v-flex>
         </v-layout>
@@ -57,7 +57,7 @@
                                 <v-spacer />
                                 <v-btn
                                     v-scroll-to="'#' + step.title"
-                                    outline
+                                    outlined
                                     color="orange"
                                     depressed
                                 >

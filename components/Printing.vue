@@ -61,7 +61,7 @@
                                                         :rules="emailRules"
                                                         data-cy="joinEmailField"
                                                         required
-                                                        browser-autocomplete="email"
+                                                        autocomplete="email"
                                                     >
                                                     </v-text-field>
                                                 </v-flex>
@@ -799,7 +799,7 @@
                                                 <v-spacer />
                                                 <v-btn
                                                     :disabled="!valid"
-                                                    outline
+                                                    outlined
                                                     color="orange"
                                                     :loading="loading"
                                                     depressed
@@ -826,7 +826,7 @@
                             done_outline
                         </v-icon>
                         {{ $t('sent_modeling_order') }}
-                        <v-btn dark flat @click="snackbar = false">
+                        <v-btn dark text @click="snackbar = false">
                             {{ $t('close') }}
                         </v-btn>
                     </v-snackbar>
@@ -842,7 +842,7 @@
                             error
                         </v-icon>
                         {{ $t('error_sent_modeling_order') }}
-                        <v-btn dark flat @click="snackbarError = false">
+                        <v-btn dark text @click="snackbarError = false">
                             {{ $t('close') }}
                         </v-btn>
                     </v-snackbar>
@@ -1072,7 +1072,7 @@ export default {
         }
     },
     watch: {
-        checkChange: async function() {
+        async checkChange() {
             try {
                 this.$refs.form.resetValidation();
                 this.zipMask = '';
@@ -1108,7 +1108,7 @@ export default {
         },
 
         // checkZipCodeChange: async function(newValue, oldValue) {
-        checkZipCodeChange: async function() {
+        async checkZipCodeChange() {
             if (
                 this.zipGet &&
                 this.form.zipCode.length >= Number(this.zipCharacters)
@@ -1172,10 +1172,7 @@ export default {
             const textTwo = item.country_alpha2_code.toLowerCase();
             const searchText = queryText.toLowerCase();
 
-            return (
-                textOne.indexOf(searchText) > -1 ||
-                textTwo.indexOf(searchText) > -1
-            );
+            return textOne.includes(searchText) || textTwo.includes(searchText);
         },
         async submit() {
             if (this.$refs.form.validate()) {

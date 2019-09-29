@@ -103,21 +103,21 @@
                     ></v-progress-linear>
                     <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn color="success" flat outline @click="toAccount"
+                        <v-btn color="success" text outlined @click="toAccount"
                             >Sign In</v-btn
                         >
                         <v-btn
                             color="primary"
-                            flat
-                            outline
+                            text
+                            outlined
                             :loading="loading"
                             @click="requestResetPassword"
                             >Restore</v-btn
                         >
                         <v-btn
                             color="green darken-1"
-                            flat
-                            outline
+                            text
+                            outlined
                             @click="dialog = false"
                             >Change</v-btn
                         >
@@ -152,8 +152,8 @@
                         <v-spacer></v-spacer>
                         <v-btn
                             color="primary"
-                            flat
-                            outline
+                            text
+                            outlined
                             to="/"
                             @click="dialog2 = false"
                             >Ok</v-btn
@@ -216,7 +216,7 @@ export default {
             this.dialog = false;
             this.$router.push('/sign-in');
         },
-        requestResetPassword: async function() {
+        async requestResetPassword() {
             this.indeterminate = true;
             this.loading = true;
             try {

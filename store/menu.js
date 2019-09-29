@@ -2,7 +2,12 @@ import axios from 'axios';
 
 export const state = () => ({
     apiUrl: process.env.baseUrl + '/page/menus',
-    menu: {},
+    menu: {
+        section1: { title: '', points: '' },
+        section2: { title: '', points: '' },
+        section3: { title: '', points: '' },
+        section4: { title: '', points: '' }
+    },
     lang: ''
 });
 

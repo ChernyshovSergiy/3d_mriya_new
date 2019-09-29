@@ -7,65 +7,65 @@
             dark
             disable-resize-watcher
         >
-            <v-toolbar flat>
+            <v-toolbar>
                 <v-list>
-                    <v-list-tile @click="drawer = !drawer">
-                        <v-list-tile-title class="title"
+                    <v-list-item @click="drawer = !drawer">
+                        <v-list-item-title class="title"
                             ><v-icon left>menu</v-icon>
                             {{ $t('menu') }}
-                        </v-list-tile-title>
-                    </v-list-tile>
+                        </v-list-item-title>
+                    </v-list-item>
                 </v-list>
             </v-toolbar>
             <v-divider></v-divider>
             <v-list>
                 <template v-for="(item, index) in items">
-                    <v-list-tile
+                    <v-list-item
                         v-if="!authenticated"
                         :key="index"
                         active-class="yellow--text"
                         router
                         :to="localePath(item.url)"
                     >
-                        <v-list-tile-action>
+                        <v-list-item-icon>
                             <v-icon>{{ item.icon }}</v-icon>
-                        </v-list-tile-action>
+                        </v-list-item-icon>
 
-                        <v-list-tile-content>
-                            <v-list-tile-title
+                        <v-list-item-content>
+                            <v-list-item-title
                                 v-text="item.title"
-                            ></v-list-tile-title>
-                        </v-list-tile-content>
-                    </v-list-tile>
+                            ></v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
                     <v-divider :key="`divider-${index}`"></v-divider>
                 </template>
                 <template v-if="authenticated">
-                    <v-list-tile
+                    <v-list-item
                         active-class="yellow--text"
                         :to="localePath('profile')"
                     >
-                        <v-list-tile-action>
+                        <v-list-item-icon>
                             <v-icon>face</v-icon>
-                        </v-list-tile-action>
+                        </v-list-item-icon>
 
-                        <v-list-tile-content>
-                            <v-list-tile-title
+                        <v-list-item-content>
+                            <v-list-item-title
                                 v-text="`${$t('profile')}`"
-                            ></v-list-tile-title>
-                        </v-list-tile-content>
-                    </v-list-tile>
+                            ></v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
                     <v-divider></v-divider>
-                    <v-list-tile active-class="yellow--text" @click="logout">
-                        <v-list-tile-action>
+                    <v-list-item active-class="yellow--text" @click="logout">
+                        <v-list-item-icon>
                             <v-icon>exit_to_app</v-icon>
-                        </v-list-tile-action>
+                        </v-list-item-icon>
 
-                        <v-list-tile-content>
-                            <v-list-tile-title
+                        <v-list-item-content>
+                            <v-list-item-title
                                 v-text="`${$t('logout')}`"
-                            ></v-list-tile-title>
-                        </v-list-tile-content>
-                    </v-list-tile>
+                            ></v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
                     <v-divider></v-divider>
                 </template>
             </v-list>
@@ -82,7 +82,7 @@
                 </v-toolbar-title>
             </nuxt-link>
             <v-btn
-                flat
+                text
                 class="hidden-sm-and-down"
                 :to="localePath('about')"
                 nuxt
@@ -91,7 +91,7 @@
             <v-spacer class="hidden-sm-and-down"></v-spacer>
 
             <div v-if="!authenticated" class="hidden-sm-and-down">
-                <v-btn flat :to="localePath('sign-in')" nuxt>
+                <v-btn text :to="localePath('sign-in')" nuxt>
                     {{ $t('signIn') }}</v-btn
                 >
                 <v-btn
@@ -102,50 +102,50 @@
                 >
             </div>
             <div v-else class="hidden-sm-and-down">
-                <div class="text-xs-center">
+                <div class="text-center">
                     <v-menu offset-y>
                         <template v-slot:activator="{ on }">
-                            <v-btn flat v-on="on"
+                            <v-btn text v-on="on"
                                 >{{ user.name }}
                                 <v-icon dark>expand_more</v-icon>
                             </v-btn>
                         </template>
                         <v-list dark class="blue-grey darken-4 white--text pa-0"
                             ><nuxt-link :to="localePath('about')">
-                                <v-list-tile
+                                <v-list-item
                                     active-class="yellow--text"
                                     :to="localePath('about')"
                                 >
-                                    <v-list-tile-action>
+                                    <v-list-item-icon>
                                         <v-icon>face</v-icon>
-                                    </v-list-tile-action>
+                                    </v-list-item-icon>
 
-                                    <v-list-tile-content>
-                                        <v-list-tile-title
+                                    <v-list-item-content>
+                                        <v-list-item-title
                                             v-text="`${$t('profile')}`"
-                                        ></v-list-tile-title>
-                                    </v-list-tile-content>
-                                </v-list-tile>
+                                        ></v-list-item-title>
+                                    </v-list-item-content>
+                                </v-list-item>
                             </nuxt-link>
-                            <v-list-tile
+                            <v-list-item
                                 active-class="yellow--text"
                                 @click="logout"
                             >
-                                <v-list-tile-action>
+                                <v-list-item-icon>
                                     <v-icon>exit_to_app</v-icon>
-                                </v-list-tile-action>
+                                </v-list-item-icon>
 
-                                <v-list-tile-content>
-                                    <v-list-tile-title
+                                <v-list-item-content>
+                                    <v-list-item-title
                                         v-text="`${$t('logout')}`"
-                                    ></v-list-tile-title>
-                                </v-list-tile-content>
-                            </v-list-tile>
+                                    ></v-list-item-title>
+                                </v-list-item-content>
+                            </v-list-item>
                         </v-list>
                     </v-menu>
                 </div>
             </div>
-            <div class="text-xs-center">
+            <div class="text-center">
                 <v-menu offset-y>
                     <template v-slot:activator="{ on }">
                         <v-btn
@@ -155,7 +155,7 @@
                             class="pa-0"
                             depressed
                             large
-                            flat
+                            text
                             v-on="on"
                         >
                             <v-flex
@@ -180,8 +180,8 @@
                             :to="switchLocalePath(loc.code)"
                         >
                             <v-divider />
-                            <no-ssr>
-                                <v-list-tile @click="light = !light">
+                            <client-only>
+                                <v-list-item @click="light = !light">
                                     <v-list-tile-action>
                                         <flag
                                             :iso="loc.flagCountry"
@@ -190,13 +190,13 @@
                                         />
                                     </v-list-tile-action>
 
-                                    <v-list-tile-content>
-                                        <v-list-tile-title
+                                    <v-list-item-content>
+                                        <v-list-item-title
                                             v-text="loc.name"
-                                        ></v-list-tile-title>
-                                    </v-list-tile-content>
-                                </v-list-tile>
-                            </no-ssr>
+                                        ></v-list-item-title>
+                                    </v-list-item-content>
+                                </v-list-item>
+                            </client-only>
                         </nuxt-link>
                     </v-list>
                 </v-menu>
@@ -245,7 +245,7 @@ export default {
             // return this.$store.getters.isAuthenticated
             return false;
         },
-        filteredLanguage: function() {
+        filteredLanguage() {
             return this.$i18n.locales.filter(i => i.code === this.$i18n.locale);
         },
         availableLocales() {

@@ -16,6 +16,7 @@
                                 type="email"
                                 :rules="emailRules"
                                 required
+                                autocomplete="email"
                             >
                             </v-text-field>
                             <v-text-field
@@ -24,10 +25,18 @@
                                 prepend-icon="lock"
                                 name="password"
                                 label="Password"
-                                type="password"
                                 required
                                 :rules="passwordRules"
                                 autocomplete="password"
+                                :append-icon="
+                                    passwordHidden
+                                        ? 'visibility_off'
+                                        : 'visibility'
+                                "
+                                :type="passwordHidden ? 'password' : 'text'"
+                                @click:append="
+                                    () => (passwordHidden = !passwordHidden)
+                                "
                             >
                             </v-text-field>
                         </v-form>
@@ -58,6 +67,7 @@ export default {
     },
     data() {
         return {
+            passwordHidden: true,
             valid: false,
             formPoint: {
                 email: '',

@@ -1,69 +1,62 @@
 <template>
-    <v-responsive :aspect-ratio="16 / 9">
-        <v-container
-            fluid
-            fill-height
-            class="home-hero"
-            style="max-height: 100vh;"
+    <v-card class="mx-auto" flat>
+        <v-img
+            :src="require('~/assets/images/Masaraty.jpg')"
+            :lazy-src="require('~/assets/images/MasaratySmall.jpg')"
+            aspect-ratio="1"
+            class="bg white--text align-content-start"
+            width="100%"
+            height="100vh"
+            contain
+            position="start center"
         >
-            <v-layout justify-center align-space-between column>
-                <v-spacer />
-                <div class="mb-3">
-                    <v-layout row wrap justify-space-around align-center>
-                        <v-flex xs8 sm6 md3 class="px-3">
-                            <v-tooltip bottom>
-                                <template #activator="{ on: tooltip }">
-                                    <v-btn
-                                        v-scroll-to="'#Printing'"
-                                        outline
-                                        block
-                                        large
-                                        nuxt
-                                        class="caption yellow--text"
-                                        v-on="{ ...tooltip }"
-                                        ><v-icon left dark large>layers</v-icon>
-                                        <span class="headline">
-                                            {{ $t('printing') }}
-                                        </span>
-                                    </v-btn>
-                                </template>
-                                <span class="yellow--text">
-                                    {{ $t('tooltipOrder') }}
-                                </span>
-                            </v-tooltip>
-                        </v-flex>
-                    </v-layout>
-                </div>
-                <!--                <v-layout column align-center class="my-2">-->
-                <!--                    <v-flex xs12 md3>-->
-                <!--                        <v-btn dark color="blue-grey darken-4" @click="change"-->
-                <!--                            >Message</v-btn-->
-                <!--                        >-->
-                <!--                    </v-flex>-->
-                <!--                </v-layout>-->
-
-                <div
-                    class="display-1 font-weight-light white--text text-xs-center mb-0 "
-                >
-                    <p>{{ massage }}</p>
-                </div>
-                <div class="mt-0">
-                    <v-layout column align-center class="my-2">
-                        <v-flex xs12 md6>
-                            <v-btn
-                                v-scroll-to="'#Introduction'"
-                                fab
-                                class="mb-1 transparent"
-                                flat
-                            >
-                                <v-icon large color="yellow"
-                                    >expand_more</v-icon
+            <v-card-title class="align-end justify-center fill-height pb-10">
+                <v-layout column wrap justify-center align-center>
+                    <v-flex xs8 sm6 md3 class="py-5">
+                        <v-tooltip bottom>
+                            <template #activator="{ on: tooltip }">
+                                <v-btn
+                                    v-scroll-to="'#Printing'"
+                                    outlined
+                                    block
+                                    large
+                                    nuxt
+                                    class="caption yellow--text"
+                                    v-on="{ ...tooltip }"
+                                    ><v-icon left dark large>layers</v-icon>
+                                    <span class="headline">
+                                        {{ $t('printing') }}
+                                    </span>
+                                </v-btn>
+                            </template>
+                            <span class="yellow--text">
+                                {{ $t('tooltipOrder') }}
+                            </span>
+                        </v-tooltip>
+                    </v-flex>
+                    <div
+                        class="display-1 font-weight-light white--text text-center mb-0 "
+                    >
+                        <p>{{ massage }}</p>
+                    </div>
+                    <div class="mt-0">
+                        <v-layout column align-center class="my-2">
+                            <v-flex xs12 md6>
+                                <v-btn
+                                    v-scroll-to="'#Introduction'"
+                                    fab
+                                    class="mb-1 transparent"
+                                    text
                                 >
-                            </v-btn>
-                        </v-flex>
-                    </v-layout>
-                </div>
-            </v-layout>
+                                    <v-icon large color="yellow"
+                                        >expand_more</v-icon
+                                    >
+                                </v-btn>
+                            </v-flex>
+                        </v-layout>
+                    </div>
+                </v-layout>
+            </v-card-title>
             <!--            <v-snackbar-->
             <!--                v-model="corSnackbar"-->
             <!--                color="info"-->
@@ -76,7 +69,7 @@
             <!--                    done_outline-->
             <!--                </v-icon>-->
             <!--                {{ $t('confirm_order') }}-->
-            <!--                <v-btn dark flat @click="mClose">-->
+            <!--                <v-btn dark text @click="mClose">-->
             <!--                    {{ $t('close') }}-->
             <!--                </v-btn>-->
             <!--            </v-snackbar>-->
@@ -92,12 +85,12 @@
             <!--                    error-->
             <!--                </v-icon>-->
             <!--                {{ $t('error_confirm_order') }}{{ email }}-->
-            <!--                <v-btn dark flat @click="mClose">-->
+            <!--                <v-btn dark text @click="mClose">-->
             <!--                    {{ $t('close') }}-->
             <!--                </v-btn>-->
             <!--            </v-snackbar>-->
-        </v-container>
-    </v-responsive>
+        </v-img>
+    </v-card>
 </template>
 
 <script>
@@ -181,11 +174,20 @@ export default {
 </script>
 
 <style scoped>
+.bg {
+    background: #000509 no-repeat center center;
+}
 .home-hero {
-    background: url('~assets/images/Masaraty.jpg');
+    width: 100%;
+    /*height: 100%;*/
+    position: absolute;
+    top: 0;
+    left: 0;
     background-size: cover;
-    /*width: 100%;*/
-    height: 100%;
+    background: #052436 url('~assets/images/Masaraty.jpg') no-repeat center
+        center;
+    transform: scale(1.1);
+
     /*height: 100vh;*/
 }
 </style>

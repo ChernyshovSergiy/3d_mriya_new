@@ -1,7 +1,7 @@
 <template>
     <v-container class="mt-3">
         <v-layout column>
-            <v-flex class="display-2 text-xs-center my-5"
+            <v-flex class="display-2 text-center my-5"
                 >User Profile {{ $route.params.id }}</v-flex
             >
         </v-layout>

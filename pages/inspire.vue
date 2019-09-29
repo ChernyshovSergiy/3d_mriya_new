@@ -1,6 +1,6 @@
 <template>
     <v-layout column justify-center align-center>
-        <v-flex xs12 sm8 md6 class="text-xs-center">
+        <v-flex xs12 sm8 md6 class="text-center">
             <div></div>
             <img src="/v.png" alt="Vuetify.js" class="mb-5" />
             <blockquote class="blockquote">

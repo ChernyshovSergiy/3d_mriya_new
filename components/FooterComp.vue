@@ -4,16 +4,11 @@
         flat
         title
         color="#031016"
-        class=" yellow--text text-xs-center flex"
+        class="yellow--text  text-center  flex"
     >
         <v-layout row wrap>
-            <v-flex xs12>
-                <v-img
-                    wrap
-                    flex
-                    :src="require('~/assets/images/footerBG.jpg')"
-                    height="auto"
-                >
+            <v-flex xs12 class="footerBG">
+                <v-img :src="require('~/assets/images/footerBG.jpg')">
                     <v-container>
                         <v-layout my-1 column wrap>
                             <v-flex xs12>
@@ -42,7 +37,7 @@
                                                 v-text="menus.title1"
                                             ></v-subheader>
 
-                                            <v-list-tile
+                                            <v-list-item
                                                 v-for="(item,
                                                 index) in menus.points1"
                                                 :key="index"
@@ -52,10 +47,11 @@
                                                 active-class="yellow--text font-weight-medium"
                                                 @click="index + 10"
                                             >
-                                                <v-list-tile-title
-                                                    >{{ item.point }}
-                                                </v-list-tile-title>
-                                            </v-list-tile>
+                                                <v-list-item-title
+                                                    class="text-left"
+                                                    v-text="item.point"
+                                                />
+                                            </v-list-item>
                                         </v-list>
                                     </v-card>
                                     <v-container grid-list-xs fluid mt-5>
@@ -91,7 +87,7 @@
                                                 class="font-weight-regular yellow--text title"
                                                 v-text="menus.title2"
                                             ></v-subheader>
-                                            <v-list-tile
+                                            <v-list-item
                                                 v-for="(item,
                                                 index) in menus.points2"
                                                 :key="`${index}-2`"
@@ -100,15 +96,16 @@
                                                 active-class="yellow--text font-weight-medium"
                                                 @click="index + 20"
                                             >
-                                                <v-list-tile-title>
-                                                    {{ item.point }}
-                                                </v-list-tile-title>
-                                            </v-list-tile>
+                                                <v-list-item-title
+                                                    class="text-left"
+                                                    v-text="item.point"
+                                                />
+                                            </v-list-item>
                                             <v-subheader
                                                 class="font-weight-regular yellow--text title"
                                                 v-text="menus.title3"
                                             ></v-subheader>
-                                            <v-list-tile
+                                            <v-list-item
                                                 v-for="(item,
                                                 index) in menus.points3"
                                                 :key="`${index}-3`"
@@ -117,10 +114,11 @@
                                                 nuxt
                                                 @click="index + 30"
                                             >
-                                                <v-list-tile-title
-                                                    >{{ item.point }}
-                                                </v-list-tile-title>
-                                            </v-list-tile>
+                                                <v-list-item-title
+                                                    class="text-left"
+                                                    v-text="item.point"
+                                                />
+                                            </v-list-item>
                                         </v-list>
                                     </v-card>
                                 </v-flex>
@@ -137,7 +135,7 @@
                                                 class="font-weight-regular yellow--text title"
                                                 v-text="menus.title4"
                                             ></v-subheader>
-                                            <v-list-tile
+                                            <v-list-item
                                                 v-for="(item,
                                                 index) in menus.points4"
                                                 :key="`${index}-4`"
@@ -147,10 +145,11 @@
                                                 nuxt
                                                 @click="index + 40"
                                             >
-                                                <v-list-tile-title
-                                                    >{{ item.point }}
-                                                </v-list-tile-title>
-                                            </v-list-tile>
+                                                <v-list-item-title
+                                                    class="text-left"
+                                                    v-text="item.point"
+                                                />
+                                            </v-list-item>
                                         </v-list>
                                     </v-card>
                                 </v-flex>
@@ -185,7 +184,7 @@
                                                     :label="`${$t('name')}`"
                                                     color="yellow"
                                                     required
-                                                    flat
+                                                    text
                                                 ></v-text-field>
 
                                                 <v-text-field
@@ -195,7 +194,7 @@
                                                     :label="`${$t('email')}`"
                                                     color="yellow"
                                                     required
-                                                    flat
+                                                    text
                                                 ></v-text-field>
 
                                                 <v-select
@@ -209,7 +208,7 @@
                                                     dark
                                                     chips
                                                     required
-                                                    flat
+                                                    text
                                                 ></v-select>
                                                 <v-textarea
                                                     v-model="message"
@@ -218,16 +217,16 @@
                                                     color="yellow"
                                                     :label="`${$t('message')}`"
                                                     required
-                                                    outline
-                                                    flat
+                                                    outlined
+                                                    text
                                                 >
                                                 </v-textarea>
                                                 <v-btn
                                                     :disabled="!valid"
                                                     color="yellow"
-                                                    outline
+                                                    outlined
                                                     rith
-                                                    flat
+                                                    text
                                                     nuxt
                                                     @click="submit"
                                                 >
@@ -245,13 +244,7 @@
                     </v-container>
                     <v-divider></v-divider>
                     <v-spacer />
-                    <v-layout
-                        align-center
-                        justify-space-between
-                        row
-                        wrap
-                        class="pa-0"
-                    >
+                    <v-layout align-center justify-space-between class="pa-0">
                         <v-flex
                             xs12
                             md4
@@ -269,7 +262,7 @@
                                 dark
                                 icon
                             >
-                                <fa
+                                <font-awesome-icon
                                     :icon="['fab', `${icon}`]"
                                     style="font-size: 24px"
                                 />
@@ -397,4 +390,11 @@ export default {
 .socialFooter:hover {
     color: yellow;
 }
+/*.footerBG {*/
+/*    background: url('~assets/images/footerBG.jpg');*/
+/*    background-size: cover;*/
+/*    width: 100%;*/
+/*    !*height: 100%;*!*/
+/*    !*height: 100vh;*!*/
+/*}*/
 </style>
