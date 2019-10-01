@@ -1,53 +1,59 @@
 <template>
-    <div class="home mt-5">
-        <v-responsive :aspect-ratio="16 / 9">
-            <v-container
-                fluid
-                fill-height
-                class="home-hero"
-                style="max-height: 100vh;"
-            >
-                <v-layout row align-center justify-center class="mt-5">
-                    <v-snackbar
-                        v-model="corSnackbar"
-                        color="info"
-                        value="info"
-                        label="info"
-                        multi-line
-                        :timeout="timeout"
-                        top
-                        ><v-icon dark left>
-                            done_outline
-                        </v-icon>
-                        {{ $t('confirm_order') }}
-                        <v-btn dark text @click="mClose">
-                            {{ $t('close') }}
-                        </v-btn>
-                    </v-snackbar>
-                    <v-snackbar
-                        v-model="errSnackbarError"
-                        color="error"
-                        value="error"
-                        label="error"
-                        multi-line
-                        :timeout="timeout"
-                        top
-                        ><v-icon dark left>
-                            error
-                        </v-icon>
+    <v-img
+        :src="require('~/assets/images/Masaraty.jpg')"
+        :lazy-src="require('~/assets/images/MasaratySmall.jpg')"
+        aspect-ratio="1"
+        class="bg white--text align-content-start"
+        width="100%"
+        height="100vh"
+        contain
+        position="start center"
+    >
+        <v-card-title class="align-end justify-center fill-height pb-10">
+            <v-layout row align-center justify-center class="mt-5">
+                <v-snackbar
+                    v-model="corSnackbar"
+                    color="info"
+                    value="info"
+                    label="info"
+                    multi-line
+                    :timeout="timeout"
+                    top
+                    ><v-icon dark left>
+                        done_outline
+                    </v-icon>
+                    {{ $t('confirm_order') }}
+                    <v-btn dark text @click="mClose">
+                        {{ $t('close') }}
+                    </v-btn>
+                </v-snackbar>
+                <v-snackbar
+                    v-model="errSnackbarError"
+                    color="error"
+                    value="error"
+                    label="error"
+                    multi-line
+                    :timeout="timeout"
+                    top
+                    ><v-icon dark left>
+                        error_outline
+                    </v-icon>
 
-                        {{ $t('error_confirm_order') }}
-                        <a :href="'mailto:' + email">
-                            {{ email }}
-                        </a>
-                        <v-btn dark text @click="mClose">
-                            {{ $t('close') }}
-                        </v-btn>
-                    </v-snackbar>
-                </v-layout>
-            </v-container>
-        </v-responsive>
-    </div>
+                    <div class="text-justify">
+                        {{ $t('error_confirm_order') }} <br />
+                        <span class="text-center">
+                            <a :href="'mailto:' + email">
+                                {{ email }}
+                            </a>
+                        </span>
+                    </div>
+                    <v-btn dark text @click="mClose">
+                        {{ $t('close') }}
+                    </v-btn>
+                </v-snackbar>
+            </v-layout>
+        </v-card-title>
+    </v-img>
 </template>
 
 <script>
@@ -60,7 +66,7 @@ export default {
             token: this.$route.params.id,
             mod: true,
             timeout: 10000,
-            email: 'example@test.ru'
+            email: process.env.adminEmail
         };
     },
     computed: {
@@ -95,11 +101,7 @@ export default {
 </script>
 
 <style scoped>
-.home-hero {
-    background: url('~assets/images/Masaraty.jpg');
-    background-size: cover;
-    /*width: 100%;*/
-    height: 100%;
-    /*height: 100vh;*/
+.bg {
+    background: #000509 no-repeat center center;
 }
 </style>

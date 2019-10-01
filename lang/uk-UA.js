@@ -6,11 +6,12 @@ export default {
     error404: 'Помилка 404',
 
     // AppNavigation
-    menu: 'меню',
-    profile: 'профайл',
-    logout: 'вихід',
-    signIn: 'вхід',
-    join: 'реєстрація',
+    menu: 'Меню',
+    home: 'Домашня',
+    profile: 'Профайл',
+    logout: 'Вихід',
+    signIn: 'Вхід',
+    join: 'Реєстрація',
 
     // HomeScreen
     printing: 'друкувати',
@@ -48,6 +49,11 @@ export default {
         "Ім'я повинно бути не менше 20 символів",
     email_is_required: 'Потрібна електронна пошта',
     email_must_be_valid: 'Електронна пошта має бути дійсною',
+    password_is_required: 'Пароль необхідний',
+    password_must_be_greater_than_8_characters:
+        'Пароль повинен бути не меньше 8 символів',
+    password_confirmation_is_required: 'Потрібно підтвердити пароль',
+    password_must_be_confirm: 'Пароль потрібно підтвердити',
     subject_is_required: "Тема обов'язкова",
     message_is_required: 'Повідомлення потрібно',
     message_must_be_greater_than_5_characters:
@@ -147,5 +153,29 @@ export default {
     delivery: 'Доставка',
     investments: 'Інвестиції',
     mass_media: 'Засоби масової інформації',
-    legal: 'Юридичні'
+    legal: 'Юридичні',
+
+    dear: 'Шановний',
+    join_form: 'Форма Регістрації',
+    login_form: 'Форма Входу',
+    password: 'Пароль',
+    password_confirmation: 'Підтвердження Паролю',
+    thank_you_for_try_join_to_us: 'Дякуємо за спробу приєднатися до нас! Але',
+    email_has_already_been_taken: 'Адреса електронної пошти вже зайнятий',
+    if_this_email_address_is_yours_please_click:
+        'Якщо ця електронна адреса ваша, будь ласка, натисніть',
+    and_log_in_to_your_account: 'і увійдіть у свій аккаунт.',
+    if_you_forgot_the_password_click: 'Якщо ви забули пароль, натисніть',
+    restore: 'Відновити',
+    and_check_your_email: 'та перевірте свою електронну пошту.',
+    if_you_made_a_mistake_when_writing_an_email_click:
+        'Якщо ви допустили помилку при написанні адреса електронної пошти, натисніть',
+    edit: 'Редагувати',
+    enter_the_correct_email_and_complete_the_registration:
+        'введіть правильну адресу електронної пошти і завершите реєстрацію',
+    please_check_your_email: 'Будь ласка, перевірте свою електронну пошту',
+    to_change_password: 'для зміни паролю',
+    link_is_valid_for_60_minutes: 'посилання діє 60 хвилин',
+    ok: 'Ok',
+    sign_in: 'Увійти'
 };

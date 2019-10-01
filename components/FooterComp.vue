@@ -27,7 +27,7 @@
                                     xs12
                                     sm4
                                     md3
-                                    class="font-weight-light title text-md-left"
+                                    class="font-weight-light title text-left"
                                     size="24px"
                                 >
                                     <v-card class="transparent mx-1" flat>
@@ -78,7 +78,7 @@
                                     xs12
                                     sm4
                                     md3
-                                    class="font-weight-light title text-md-left"
+                                    class="font-weight-light title text-left"
                                     size="24px"
                                 >
                                     <v-card dark class="transparent mx-1" flat>
@@ -126,7 +126,7 @@
                                     xs12
                                     sm4
                                     md3
-                                    class="font-weight-light title text-md-left"
+                                    class="font-weight-light title text-left"
                                     size="24px"
                                 >
                                     <v-card dark class="transparent mx-1" flat>

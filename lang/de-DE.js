@@ -6,11 +6,12 @@ export default {
     error404: 'Fehler 404',
 
     // AppNavigation
-    menu: 'menü',
-    profile: 'profil',
-    logout: 'ausloggen',
-    signIn: 'einloggen',
-    join: 'registrierung',
+    menu: 'Menü',
+    home: 'Zuhause',
+    profile: 'Profil',
+    logout: 'Ausloggen',
+    signIn: 'Einloggen',
+    join: 'Registrierung',
 
     // HomeScreen
     printing: 'Tippen',
@@ -47,6 +48,11 @@ export default {
         'Der Name muss länger als 3 Zeichen sein',
     name_must_be_less_than_20_characters:
         'Der Name darf nicht länger als 20 Zeichen sein',
+    password_is_required: 'Passwort wird benötigt',
+    password_must_be_greater_than_8_characters:
+        'Das Passwort muss länger als 8 Zeichen sein',
+    password_confirmation_is_required: 'Passwortbestätigung ist erforderlich',
+    password_must_be_confirm: 'Das Passwort muss bestätigt werden',
     email_is_required: 'E-mail ist erforderlich',
     email_must_be_valid: 'E-mail muss gültig sein',
     subject_is_required: 'Betreff ist erforderlich',
@@ -151,5 +157,31 @@ export default {
     delivery: 'Lieferung',
     investments: 'Investitionen',
     mass_media: 'Massenmedien',
-    legal: 'Legal'
+    legal: 'Legal',
+
+    dear: 'Sehr geehrter',
+    join_form: 'Formular Beitreten',
+    login_form: 'Login Formular',
+    password: 'Passwort',
+    password_confirmation: 'Passwort Bestätigung',
+    thank_you_for_try_join_to_us:
+        'Vielen Dank für den Versuch, sich uns anzuschließen! Aber die',
+    email_has_already_been_taken: 'E-Mail wurde bereits vergeben',
+    if_this_email_address_is_yours_please_click:
+        'Wenn diese E-Mail-Adresse Ihnen gehört, klicken Sie bitte auf',
+    and_log_in_to_your_account: 'und melde dich in deinem Konto an.',
+    if_you_forgot_the_password_click:
+        'Wenn Sie das Passwort vergessen haben, klicken Sie auf',
+    restore: 'Wiederherstellen',
+    and_check_your_email: 'und überprüfe deine E-Mails.',
+    if_you_made_a_mistake_when_writing_an_email_click:
+        'Wenn Sie beim Schreiben einer E-Mail einen Fehler gemacht haben, klicken Sie auf',
+    edit: 'Bearbeiten',
+    enter_the_correct_email_and_complete_the_registration:
+        'Geben Sie die korrekte E-Mail-Adresse ein und schließen Sie die Registrierung ab',
+    please_check_your_email: 'Bitte überprüfen Sie Ihre E-Mail',
+    to_change_password: 'Passwort ändern',
+    link_is_valid_for_60_minutes: 'Der Link ist 60 Minuten gültig',
+    ok: 'Ok',
+    sign_in: 'Einloggen'
 };

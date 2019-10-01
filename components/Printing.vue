@@ -18,7 +18,7 @@
                                     align-center
                                     justify-center
                                     fill-height
-                                    pa-3
+                                    mx-5
                                     black--text
                                 >
                                     <v-card-text>
@@ -119,11 +119,13 @@
                                                                 </v-avatar></span
                                                             >
                                                         </template>
-                                                        <span class="body-1">{{
-                                                            $t(
-                                                                'desc_google_stl'
-                                                            )
-                                                        }}</span>
+                                                        <span class="body-1">
+                                                            {{
+                                                                $t(
+                                                                    'desc_google_stl'
+                                                                )
+                                                            }}</span
+                                                        >
                                                     </v-tooltip>
                                                 </v-flex>
                                             </v-layout>
@@ -602,6 +604,7 @@
                                                         v-model.trim="
                                                             form.quantity
                                                         "
+                                                        v-mask="quantityMask"
                                                         prepend-icon="shopping_basket"
                                                         name="quantity"
                                                         :label="
@@ -609,7 +612,6 @@
                                                         "
                                                         type="quantity"
                                                         :rules="quantityRules"
-                                                        mask="######"
                                                         data-cy="joinNameField"
                                                         required
                                                     >
@@ -667,6 +669,7 @@
                                                         v-model.trim="
                                                             form.zipCode
                                                         "
+                                                        v-mask="zipMask"
                                                         :disabled="
                                                             checkCountrySelect
                                                         "
@@ -684,7 +687,6 @@
                                                         return-masked-value
                                                         :hint="hintZip"
                                                         persistent-hint
-                                                        :mask="zipMask"
                                                         @input="form.zip"
                                                     >
                                                     </v-text-field>
@@ -777,9 +779,8 @@
                                                 <v-spacer />
                                                 <v-flex xs12 sm5>
                                                     <v-text-field
-                                                        v-model.trim="
-                                                            form.phone
-                                                        "
+                                                        v-model.trim="phone"
+                                                        v-mask="maskPhone"
                                                         :disabled="
                                                             checkZipCodeSelect
                                                         "
@@ -789,7 +790,6 @@
                                                         :label="
                                                             `${$t('phone')}`
                                                         "
-                                                        :mask="maskPhone"
                                                         type="phone"
                                                     >
                                                     </v-text-field>
@@ -894,13 +894,15 @@ export default {
             loading: false,
             timeout: 10000,
             zipGet: false,
-            maskPhone: 'phone',
+            maskPhone: '(###) ###-##-##',
             zipFlag: 'checkChange',
             zipFlagChange: 'checkZipCodeChange',
             zipMask: '',
+            quantityMask: '######',
             zipRange: '',
             zipCharacters: '8',
             cities: [],
+            phone: '',
             size: {
                 id: 3,
                 value: '54mm (2 1/4") 1:32'
@@ -944,7 +946,7 @@ export default {
                 state: '',
                 city: '',
                 address: '',
-                phone: '',
+                phone: 0,
                 cLang: this.$i18n.locale
             },
             nameRules: [
@@ -1016,7 +1018,8 @@ export default {
                         v
                     ) || this.$t('phone_number_must_be_digital'),
                 v =>
-                    v.length === 10 || this.$t('phone_number_must_be_10_digits')
+                    (v || '').length === 15 ||
+                    this.$t('phone_number_must_be_10_digits')
             ],
             sizes: [
                 { id: 1, value: '25mm (1") 1:72' },
@@ -1099,7 +1102,7 @@ export default {
                     })
                     .catch(e => {
                         console.log('This is get mask!!! error: ' + e);
-                        this.zipMask = '';
+                        this.zipMask = 'XXXXXXXXXX';
                         this.zipRange = '';
                         this.zipCharacters = '';
                         this.zipGet = false;
@@ -1194,8 +1197,7 @@ export default {
                     this.form.material = this.selectMaterial.id;
                     this.form.quality = this.selectQuality.id;
                     this.form.quantity = Number(this.form.quantity);
-                    this.form.phone = Number(this.form.phone);
-
+                    this.form.phone = Number(this.phone.replace(/[^\d]/g, ''));
                     const self = this;
                     await this.$axios
                         .post('/order/printing', this.form)
@@ -1219,7 +1221,8 @@ export default {
                             self.form.state = '';
                             self.form.city = '';
                             self.form.address = '';
-                            self.form.phone = '';
+                            self.form.phone = 0;
+                            self.phone = '';
                             self.loading = false;
                             self.$refs.form.resetValidation();
                             setTimeout(function() {

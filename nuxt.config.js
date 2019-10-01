@@ -6,8 +6,9 @@ export default {
      ** Headers of the page
      */
     head: {
-        titleTemplate: '%s - ' + process.env.npm_package_name,
-        title: process.env.npm_package_name || '3D Mriya',
+        // titleTemplate: '%s - ' + process.env.npm_package_name,
+        // title: process.env.npm_package_name || '3D Mriya',
+        title: '3D Mriya',
         meta: [
             { charset: 'utf-8' },
             {
@@ -55,6 +56,7 @@ export default {
         './plugins/axios',
         './plugins/vue-flag-icon',
         './plugins/i18n.js',
+        './plugins/vue-the-mask.js',
         // './plugins/auth',
         { src: '~/plugins/swiper.js', ssr: false },
         { src: '~/plugins/vue-gallery.js', ssr: false }
@@ -224,8 +226,10 @@ export default {
         baseURL: 'http://127.0.0.1:9090/api/v1'
     },
     env: {
-        baseUrl: 'http://127.0.0.1:9090/api/v1' || 'http://localhost:3000'
+        baseUrl: 'http://127.0.0.1:9090/api/v1' || 'http://localhost:3000',
         // baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+        adminEmail: '3dmriya@support.ua'
+        // adminEmail: process.env.adminEmail || 'example@test.ru'
     },
     /*
      ** vuetify module configuration

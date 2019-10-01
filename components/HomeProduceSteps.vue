@@ -21,49 +21,52 @@
                             class="mx-auto"
                             height="100%"
                         >
-                            <v-responsive>
-                                <v-img
-                                    :src="
-                                        require('~/assets/images/' +
-                                            `${step.image}`)
-                                    "
-                                    height="100%"
+                            <v-img
+                                class="white--text"
+                                :src="
+                                    require('~/assets/images/' +
+                                        `${step.image}`)
+                                "
+                                contain
+                                position="start center"
+                            >
+                                <v-card-title
+                                    class="align-end justify-center fill-height text-capitalize"
                                 >
-                                    <v-layout
-                                        align-end
-                                        justify-center
-                                        fill-height
-                                        pa-3
-                                        white--text
-                                    >
-                                        <div
-                                            class="title font-weight-light text-capitalize"
+                                    {{ items[step.id + 0] }}
+                                </v-card-title>
+                            </v-img>
+                            <template
+                                class="column align-center justify-lg-space-between"
+                            >
+                                <v-list-item>
+                                    <v-list-item-content>
+                                        <v-list-item-title
+                                            class="headline mb-1 text-capitalize"
                                         >
-                                            {{ items[step.id + 0] }}
-                                        </div>
-                                    </v-layout>
-                                </v-img>
-                            </v-responsive>
-                            <v-card-text>
-                                <h3 class="headline mb-0 text-capitalize">
-                                    {{ items[step.id + 1] }}
-                                </h3>
-                                <div class="mt-2">
-                                    &emsp;&emsp;{{ text[i] }}
-                                </div>
-                            </v-card-text>
-                            <v-divider />
-                            <v-card-actions class="my-auto">
-                                <v-spacer />
-                                <v-btn
-                                    v-scroll-to="'#' + step.title"
-                                    outlined
-                                    color="orange"
-                                    depressed
-                                >
-                                    {{ items[step.id + 2] }}
-                                </v-btn>
-                            </v-card-actions>
+                                            {{ items[step.id + 1] }}
+                                        </v-list-item-title>
+                                        <p
+                                            class="text-justify font-weight-light"
+                                        >
+                                            &emsp;&emsp;{{ text[i] }}
+                                        </p>
+                                    </v-list-item-content>
+                                </v-list-item>
+                                <v-divider />
+                                <v-card-actions>
+                                    <v-spacer />
+                                    <v-btn
+                                        v-scroll-to="'#' + step.title"
+                                        outlined
+                                        color="orange"
+                                        depressed
+                                        nuxt
+                                    >
+                                        {{ items[step.id + 2] }}
+                                    </v-btn>
+                                </v-card-actions>
+                            </template>
                         </v-card>
                     </v-hover>
                 </v-flex>

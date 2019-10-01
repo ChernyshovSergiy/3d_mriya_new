@@ -64,7 +64,7 @@
                         </v-list-item-icon>
 
                         <v-list-item-content>
-                            <v-list-item-title v-text="item.title" />
+                            <v-list-item-title v-text="`${$t(item.title)}`" />
                         </v-list-item-content>
                     </v-list-item>
                     <v-divider :key="`divider-${index}`"></v-divider>
@@ -113,13 +113,13 @@
                     <span>{{ appTitle }}</span>
                 </v-toolbar-title>
             </nuxt-link>
-            <v-btn
-                text
-                class="hidden-sm-and-down"
-                :to="localePath('profile')"
-                nuxt
-                >{{ $t('menu') }}</v-btn
-            >
+            <!--            <v-btn-->
+            <!--                text-->
+            <!--                class="hidden-sm-and-down"-->
+            <!--                :to="localePath('profile')"-->
+            <!--                nuxt-->
+            <!--                >{{ $t('menu') }}</v-btn-->
+            <!--            >-->
             <v-spacer class="hidden-sm-and-down"></v-spacer>
 
             <div v-if="!authenticated" class="hidden-sm-and-down">
@@ -133,49 +133,59 @@
                     >{{ $t('join') }}</v-btn
                 >
             </div>
-            <div v-else class="hidden-sm-and-down">
-                <div class="text-center">
-                    <v-menu offset-y>
-                        <template v-slot:activator="{ on }">
-                            <v-btn text v-on="on"
-                                >{{ user.name }}
-                                <v-icon dark>expand_more</v-icon>
-                            </v-btn>
-                        </template>
-                        <v-list dark class="blue-grey darken-4 white--text pa-0"
-                            ><nuxt-link :to="localePath('profile')">
-                                <v-list-item-title
+            <div v-else class="hidden-sm-and-down ma-5">
+                <v-row align="center">
+                    <v-avatar
+                        class="ma-2"
+                        color="grey darken-3"
+                        size="50px"
+                        style="cursor: pointer"
+                    >
+                        <v-img class="elevation-6" :src="gravatar" />
+                    </v-avatar>
+                    <div class="text-center">
+                        <v-menu offset-y>
+                            <template v-slot:activator="{ on }">
+                                <v-btn text v-on="on"
+                                    >{{ user.name }}
+                                    <v-icon dark>expand_more</v-icon>
+                                </v-btn>
+                            </template>
+                            <v-list
+                                dark
+                                color="#052238"
+                                class="white--text pa-0"
+                                ><nuxt-link :to="localePath('profile')">
+                                    <v-list-item
+                                        active-class="yellow--text"
+                                        to="/profile"
+                                    >
+                                        <v-list-item-icon>
+                                            <v-icon>face</v-icon>
+                                        </v-list-item-icon>
+                                        <v-list-item-title
+                                            v-text="`${$t('profile')}`"
+                                        ></v-list-item-title>
+                                    </v-list-item>
+                                </nuxt-link>
+                                <v-list-item
                                     active-class="yellow--text"
-                                    to="/profile"
+                                    @click="logout"
                                 >
                                     <v-list-item-icon>
-                                        <v-icon>face</v-icon>
+                                        <v-icon>exit_to_app</v-icon>
                                     </v-list-item-icon>
 
                                     <v-list-item-content>
                                         <v-list-item-title
-                                            v-text="`${$t('profile')}`"
+                                            v-text="`${$t('logout')}`"
                                         ></v-list-item-title>
                                     </v-list-item-content>
-                                </v-list-item-title>
-                            </nuxt-link>
-                            <v-list-item
-                                active-class="yellow--text"
-                                @click="logout"
-                            >
-                                <v-list-item-icon>
-                                    <v-icon>exit_to_app</v-icon>
-                                </v-list-item-icon>
-
-                                <v-list-item-content>
-                                    <v-list-item-title
-                                        v-text="`${$t('logout')}`"
-                                    ></v-list-item-title>
-                                </v-list-item-content>
-                            </v-list-item>
-                        </v-list>
-                    </v-menu>
-                </div>
+                                </v-list-item>
+                            </v-list>
+                        </v-menu>
+                    </div>
+                </v-row>
             </div>
             <div class="text-center">
                 <v-menu open-on-hover offset-y>
@@ -236,13 +246,6 @@
 import md5 from 'md5';
 export default {
     name: 'AppNavigation',
-    // props: {
-    //     mini: {
-    //         type: Boolean,
-    //         required: false,
-    //         default: false
-    //     }
-    // },
     data() {
         return {
             tile: true,
@@ -256,10 +259,10 @@ export default {
             defaultImg: 'mm',
             rating: 'g',
             items: [
-                { title: 'Menu', icon: 'home', url: 'profile' },
-                { title: 'Profile', icon: 'face', url: 'profile' },
-                { title: 'Sign In', icon: 'lock', url: 'sign-in' },
-                { title: 'Join', icon: 'input', url: 'join' }
+                { title: 'home', icon: 'home', url: 'index' },
+                { title: 'profile', icon: 'face', url: 'profile' },
+                { title: 'sign_in', icon: 'lock', url: 'sign-in' },
+                { title: 'join', icon: 'input', url: 'join' }
             ],
             private: [
                 { title: 'Profile', icon: 'face', url: 'profile' },

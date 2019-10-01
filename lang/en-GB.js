@@ -6,11 +6,12 @@ export default {
     error404: 'Error 404',
 
     // AppNavigation
-    menu: 'menu',
-    profile: 'profile',
-    logout: 'logout',
-    signIn: 'sign in',
-    join: 'join',
+    menu: 'Menu',
+    home: 'Home',
+    profile: 'Profile',
+    logout: 'Logout',
+    signIn: 'Sign In',
+    join: 'Join',
 
     // HomeScreen
     printing: 'Printing',
@@ -46,6 +47,11 @@ export default {
         'Name must be greater than 3 characters',
     name_must_be_less_than_20_characters:
         'Name must be less than 20 characters',
+    password_is_required: 'Password is required',
+    password_must_be_greater_than_8_characters:
+        'Password must be greater than 8 characters',
+    password_confirmation_is_required: 'Password confirmation is required',
+    password_must_be_confirm: 'Password must be confirmed',
     email_is_required: 'E-mail is required',
     email_must_be_valid: 'E-mail must be valid',
     subject_is_required: 'Subject is required',
@@ -145,5 +151,29 @@ export default {
     delivery: 'Delivery',
     investments: 'Investments',
     mass_media: 'Mass Media',
-    legal: 'Legal'
+    legal: 'Legal',
+
+    dear: 'Dear',
+    join_form: 'Join Form',
+    login_form: 'Login Form',
+    password: 'Password',
+    password_confirmation: 'Password Confirmation',
+    thank_you_for_try_join_to_us: 'Thank you for try join to us! But the',
+    email_has_already_been_taken: 'email has already been taken',
+    if_this_email_address_is_yours_please_click:
+        'If this email address is yours, please click',
+    and_log_in_to_your_account: 'and log in to your account.',
+    if_you_forgot_the_password_click: 'If you forgot the password, click',
+    restore: 'Restore',
+    and_check_your_email: 'and check your email.',
+    if_you_made_a_mistake_when_writing_an_email_click:
+        'If you made a mistake when writing an email, click',
+    edit: 'Edit',
+    enter_the_correct_email_and_complete_the_registration:
+        'enter the correct email and complete the registration',
+    please_check_your_email: 'Please check your e-mail',
+    to_change_password: 'to change password',
+    link_is_valid_for_60_minutes: 'link is valid for 60 minutes',
+    ok: 'Ok',
+    sign_in: 'Sign in'
 };

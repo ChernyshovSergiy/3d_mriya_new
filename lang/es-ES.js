@@ -6,11 +6,12 @@ export default {
     error404: 'Error 404',
 
     // AppNavigation
-    menu: 'menú',
-    profile: 'perfil',
-    logout: 'cerrar sesión',
-    signIn: 'iniciar sesión',
-    join: 'registro',
+    menu: 'Menú',
+    home: 'Inicio',
+    profile: 'Perfil',
+    logout: 'Cerrar Sesión',
+    signIn: 'Iniciar Sesión',
+    join: 'Registro',
 
     // HomeScreen
     printing: 'Escribiendo',
@@ -47,6 +48,11 @@ export default {
         'El nombre debe tener más de 3 caracteres',
     name_must_be_less_than_20_characters:
         'El nombre debe tener menos de 20 caracteres',
+    password_is_required: 'Se requiere contraseña',
+    password_must_be_greater_than_8_characters:
+        'La contraseña debe tener más de 8 caracteres',
+    password_confirmation_is_required: 'Se requiere confirmación de contraseña',
+    password_must_be_confirm: 'La contraseña debe ser confirmada',
     email_is_required: 'Correo electronico es requerido',
     email_must_be_valid: 'El email debe ser válido',
     subject_is_required: 'El sujeto es requerido',
@@ -151,5 +157,30 @@ export default {
     delivery: 'Entrega',
     investments: 'Inversiones',
     mass_media: 'Medios de comunicación',
-    legal: 'Legal'
+    legal: 'Legal',
+
+    dear: 'Querido',
+    join_form: 'Formulario de inscripción',
+    login_form: 'Formulario de inicio de sesión',
+    password: 'Contraseña',
+    password_confirmation: 'Confirmación de contraseña',
+    thank_you_for_try_join_to_us:
+        'Gracias por intentar unirse a nosotros! Pero el',
+    email_has_already_been_taken: 'el correo ya a sido recibido',
+    if_this_email_address_is_yours_please_click:
+        'Si esta dirección de correo electrónico es suya, haga clic en',
+    and_log_in_to_your_account: 'e inicie sesión en su cuenta.',
+    if_you_forgot_the_password_click: 'Si olvidó la contraseña, haga clic en',
+    restore: 'Restaurar',
+    and_check_your_email: 'y revisa tu correo electrónico.',
+    if_you_made_a_mistake_when_writing_an_email_click:
+        'Si cometió un error al escribir un correo electrónico, haga clic en',
+    edit: 'Editar',
+    enter_the_correct_email_and_complete_the_registration:
+        'ingrese el correo electrónico correcto y complete el registro',
+    please_check_your_email: 'Por favor revise su correo electrónico',
+    to_change_password: 'cambiar contraseña',
+    link_is_valid_for_60_minutes: 'el enlace es válido por 60 minutos',
+    ok: 'Ok',
+    sign_in: 'Iniciar sesión'
 };

@@ -34,11 +34,11 @@
                             </span>
                         </v-tooltip>
                     </v-flex>
-                    <div
-                        class="display-1 font-weight-light white--text text-center mb-0 "
+                    <v-card-text
+                        class="display-1 font-weight-light white--text text-center mb-0"
                     >
                         <p>{{ massage }}</p>
-                    </div>
+                    </v-card-text>
                     <div class="mt-0">
                         <v-layout column align-center class="my-2">
                             <v-flex xs12 md6>

@@ -24,7 +24,7 @@
                                     align-center
                                     justify-center
                                     fill-height
-                                    pa-3
+                                    px-5
                                     black--text
                                 >
                                     <v-card-text>

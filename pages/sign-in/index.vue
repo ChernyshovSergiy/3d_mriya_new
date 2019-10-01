@@ -4,7 +4,9 @@
             <v-flex xs12 sm8 md4>
                 <v-card class="elevation-12">
                     <v-toolbar dark color="blue-grey darken-4">
-                        <v-toolbar-title>Login Form</v-toolbar-title>
+                        <v-toolbar-title>
+                            {{ $t('login_form') }}
+                        </v-toolbar-title>
                     </v-toolbar>
                     <v-card-text>
                         <v-form ref="form" v-model="valid" lazy-validation>
@@ -12,7 +14,7 @@
                                 v-model="formPoint.email"
                                 prepend-icon="person"
                                 name="email"
-                                label="Email"
+                                :label="`${$t('email')}`"
                                 type="email"
                                 :rules="emailRules"
                                 required
@@ -24,7 +26,7 @@
                                 v-model="formPoint.password"
                                 prepend-icon="lock"
                                 name="password"
-                                label="Password"
+                                :label="`${$t('password')}`"
                                 required
                                 :rules="passwordRules"
                                 autocomplete="password"
@@ -48,7 +50,7 @@
                             color="blue-grey darken-4"
                             :disabled="!valid"
                             @click="submit"
-                            >Login</v-btn
+                            >{{ $t('sign_in') }}</v-btn
                         >
                     </v-card-actions>
                 </v-card>
@@ -58,13 +60,9 @@
 </template>
 
 <script>
-import { VTextField } from 'vuetify/lib';
 export default {
     name: 'SignIn',
     middleware: 'guest',
-    components: {
-        VTextField
-    },
     data() {
         return {
             passwordHidden: true,
@@ -74,17 +72,17 @@ export default {
                 password: ''
             },
             emailRules: [
-                v => !!v || 'E-mail is required',
+                v => !!v || this.$t('email_is_required'),
                 v =>
                     /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(
                         v
-                    ) || 'E-mail must be valid'
+                    ) || this.$t('email_must_be_valid')
             ],
             passwordRules: [
-                v => !!v || 'Password is required',
+                v => !!v || this.$t('password_is_required'),
                 v =>
                     v.length >= 8 ||
-                    'Password must be greater than 8 characters'
+                    this.$t('password_must_be_greater_than_8_characters')
             ]
         };
     },

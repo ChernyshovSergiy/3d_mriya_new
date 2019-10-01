@@ -61,12 +61,8 @@
 </template>
 
 <script>
-import { VTextField } from 'vuetify/lib';
 export default {
     middleware: 'guest',
-    components: {
-        VTextField
-    },
     data() {
         return {
             valid: false,

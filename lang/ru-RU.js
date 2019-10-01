@@ -6,11 +6,12 @@ export default {
     error404: 'Ошибка 404',
 
     // AppNavigation
-    menu: 'меню',
-    profile: 'профайл',
-    logout: 'выход',
-    signIn: 'вход',
-    join: 'регистрация',
+    menu: 'Меню',
+    home: 'Домашняя',
+    profile: 'Профайл',
+    logout: 'Выход',
+    signIn: 'Вход',
+    join: 'Регистрация',
 
     // HomeScreen
     printing: 'печатать',
@@ -47,6 +48,11 @@ export default {
         'Имя должно быть больше 3-х символов',
     name_must_be_less_than_20_characters:
         'Имя должно быть не более 20 символов',
+    password_is_required: 'Необходим пароль',
+    password_must_be_greater_than_8_characters:
+        'Пароль должен быть не мение 8 символов',
+    password_confirmation_is_required: 'Требуется подтверждение пароля',
+    password_must_be_confirm: 'Пароль должен быть подтвержден',
     email_is_required: 'Электронная почта обязательна',
     email_must_be_valid: 'E-mail должен быть действительным',
     subject_is_required: 'Тема обязательна',
@@ -148,5 +154,29 @@ export default {
     delivery: 'Доставка',
     investments: 'Инвестиции',
     mass_media: 'СМИ',
-    legal: 'Право'
+    legal: 'Право',
+
+    dear: 'Уважаемый',
+    join_form: 'Форма Регистрации',
+    login_form: 'Форма Входа',
+    password: 'Пароль',
+    password_confirmation: 'Подтверждение пароля',
+    thank_you_for_try_join_to_us: 'Спасибо за попытку присоединиться к нам! Но',
+    email_has_already_been_taken: 'Адрес электронной почты уже занят',
+    if_this_email_address_is_yours_please_click:
+        'Если этот адрес электронной почты ваш, пожалуйста нажмите',
+    and_log_in_to_your_account: 'и войдите в свой аккаунт.',
+    if_you_forgot_the_password_click: 'Если вы забыли пароль, нажмите',
+    restore: 'Восстановить',
+    and_check_your_email: 'и проверьте свою электронную почту.',
+    if_you_made_a_mistake_when_writing_an_email_click:
+        'Если вы допустили ошибку при написании адрес электронной почты , нажмите',
+    edit: 'Редактировать',
+    enter_the_correct_email_and_complete_the_registration:
+        'введите правильный адрес электронной почты и завершите регистрацию',
+    please_check_your_email: 'Пожалуйста, проверьте свою электронную почту',
+    to_change_password: 'для смены пароля',
+    link_is_valid_for_60_minutes: 'ссылка действительна в течение 60 минут',
+    ok: 'Ok',
+    sign_in: 'Вход'
 };

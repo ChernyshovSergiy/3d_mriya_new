@@ -216,6 +216,7 @@ export default {
 .swiper-container-rtl .swiper-button-prev,
 .swiper-container-rtl .swiper-button-next {
     fill: #ffce0b;
+    cursor: pointer;
 }
 /*.swiper-pagination-bullet {*/
 /*    opacity: 0.5;*/
